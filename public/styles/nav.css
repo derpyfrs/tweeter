@@ -1,0 +1,28 @@
+nav {
+  position:
+  top: 0;
+  height: 60px;
+  background-color: #ce93d8;
+  color: purple;
+  padding-left: 2em;
+  padding-right: 2em;
+
+}
+
+
+#nav-bar .logo {
+
+  float: left;
+  height: 60px;
+  width: 60px;
+}
+
+#nav-bar .header{
+  float: left;
+  font-size: 200%;
+  padding-left: 10px;
+  padding-top: 8px;
+  letter-spacing: .7em;
+
+
+}

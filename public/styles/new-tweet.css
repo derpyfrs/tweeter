@@ -1,0 +1,39 @@
+.tweetHeader {
+
+  letter-spacing: .6em ;
+ font: 150% bolder sans-serif;
+ box-sizing: border-box;
+ border-bottom: fuchsia 1.5px solid;
+ float: left;
+ margin-top: 10px;
+ margin-left: 4px;
+ padding-left: 1em;
+}
+
+textarea {
+  background: #fce4ec;
+  width: 400px;
+  height: 70px;
+}
+
+input {
+  display: block;
+  letter-spacing: .5em;
+  text-align: center;
+  margin-left: 10px;
+  margin-top: 8px;
+  padding: 3px;
+  font-size: 88%;
+  float: left;
+}
+
+span.counter {
+  display: block;
+  box-sizing: content-box;
+  font-style: italic;
+  text-align: right;
+  font-weight: bold;
+  margin-right: 10px;
+  margin-top: 8px;
+  float: right
+}
