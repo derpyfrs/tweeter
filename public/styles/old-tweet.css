@@ -1,0 +1,52 @@
+section.tweet-container {
+/*border: 1px black solid;*/
+margin-top: 40px;
+opacity: .5;
+}
+
+section.tweet-container:hover {
+  opacity: 1;
+}
+
+article.old-tweet header {
+
+    margin-left: 23px;
+    /*margin-right: ;*/
+    float: left;
+    width: 400px;
+    /*border: 1px black solid;*/
+    text-align: left;
+}
+
+article.old-tweet .user-name {
+  text-align: right;
+}
+
+div.time {
+  float: left;
+  padding-left: 25px;
+
+}
+
+article.old-tweet textarea {
+
+}
+
+article.old-tweet img {
+  width: 60px;
+  float: left;
+  height: auto;
+}
+
+button {
+  text-align: center;
+  background: #f3e5f5;
+  border: none;
+  float: right;
+  margin-right: 5px;
+}
+
+button.stars {
+  margin-right: 20px;
+
+}

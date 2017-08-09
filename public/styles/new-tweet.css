@@ -1,9 +1,10 @@
 .tweetHeader {
 
-  letter-spacing: .6em ;
+  letter-spacing: .2em ;
  font: 150% bolder sans-serif;
+ color: 730000;
  box-sizing: border-box;
- border-bottom: fuchsia 1.5px solid;
+ border-bottom: #F59999 1.5px solid;
  float: left;
  margin-top: 10px;
  margin-left: 4px;
@@ -18,7 +19,7 @@ textarea {
 
 input {
   display: block;
-  letter-spacing: .5em;
+  letter-spacing: .3em;
   text-align: center;
   margin-left: 10px;
   margin-top: 8px;

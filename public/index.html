@@ -14,12 +14,8 @@
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-       <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
-    <!-- External JS -->
-    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
-
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/app.js"></script>
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+        <link rel="stylesheet" href="/styles/old-tweet.css" type="text/css" />
   </head>
 
   <body>
@@ -36,11 +32,29 @@
         <p class="tweetHeader">Compose Tweet</p>
           <form action="/tweets/" method="POST">
         <textarea name="text" placeholder="What are you humming about?"></textarea>
-      <input type="submit" value="Tweet">
-    <span class="counter">140</span>
-  </form>
-</section>
+        <input type="submit" value="Tweet">
+      <span class="counter">140</span>
+    </form>
+  </section>
+  <section class="tweet-container">
+    <article  class="old-tweet">
+      <header>  <img src="/images/139.jpg"> <p class="user-name"> userName </p> hello </header>
+      <textarea name="oldText" placeholder="some old stuff"></textarea>
+      <footer> <div class="time">Time</div>
+        <button class="stars">&#11088;</button>
+        <button class="retweet">&#128260;</button>
+        <button class="heart">&#128156;</button>
+      </footer>
+
+    </article>
+  </section>
     </main>
+    <!-- External JS -->
+    <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
 
   </body>
 </html>
