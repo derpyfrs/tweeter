@@ -57,12 +57,25 @@ function renderTweets(tweets) {
   // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
+    // $('.tweet-list').empty();
+    tweets.forEach(function(tweet) {
+      var aTweet = createTweetElement(tweet);
+      $('.tweet-container').append($(aTweet));
+      // $('.fridge-list').prepend(aTweet);
+    });
 }
 
 function createTweetElement(tweet) {
-  var $tweet = $('<article>').addClass('tweet');
-  // ...
-  return $tweet;
-}
+    return `
+      <article  class="old-tweet">
+       <header>  <img src=${tweet.user.avatars.small}> ${tweet.user.name} </p> ${tweet.user.handle} </header>
+      <div class="oldText" > ${tweet.content.text}</div>
+      <footer> <div class="time">${tweet.created_at}</div>
+        <button class="stars">&#11088;</button>
+        <button class="retweet">&#128260;</button>
+        <button class="heart">&#128156;</button>
+      </footer>
+      </article>
+    `;
+  }
 
-renderTweets(data);

@@ -1,7 +1,9 @@
 section.tweet-container {
-/*border: 1px black solid;*/
 margin-top: 40px;
 opacity: .5;
+box-sizing: border-box;
+/*width: 400px;
+height: 150px;*/
 }
 
 section.tweet-container:hover {
@@ -9,12 +11,9 @@ section.tweet-container:hover {
 }
 
 article.old-tweet header {
-
+  display: inline-block;
     margin-left: 23px;
-    /*margin-right: ;*/
-    float: left;
     width: 400px;
-    /*border: 1px black solid;*/
     text-align: left;
 }
 
@@ -28,7 +27,10 @@ div.time {
 
 }
 
-article.old-tweet textarea {
+div.oldtext {
+  box-sizing: content-box;
+  width: 400px;
+  height: 70px;
 
 }
 
