@@ -51,31 +51,85 @@ var data = [
     },
     "created_at": 1461113796368
   }
+
 ];
 
-function renderTweets(tweets) {
+$(function() {
+
+
+  function preventDef(event) {
+    event.preventDefault(event);
+  }
+
+  function formatDate(timestamp) {
+    return moment(timestamp).fromNow();
+
+  }
+
+  function escape(str) {
+    var div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+
+  function renderTweets(tweets) {
   // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     // $('.tweet-list').empty();
     tweets.forEach(function(tweet) {
       var aTweet = createTweetElement(tweet);
-      $('.tweet-container').append($(aTweet));
+      $('.tweet-container').prepend(aTweet);
       // $('.fridge-list').prepend(aTweet);
     });
-}
+  }
 
-function createTweetElement(tweet) {
-    return `
+  function createTweetElement(tweet) {
+    var formattedDate = formatDate(tweet.created_at);
+    var safeHTML = escape(tweet.content.text);
+
+    return $(`
       <article  class="old-tweet">
        <header>  <img src=${tweet.user.avatars.small}> ${tweet.user.name} </p> ${tweet.user.handle} </header>
-      <div class="oldText" > ${tweet.content.text}</div>
-      <footer> <div class="time">${tweet.created_at}</div>
+      <div class="oldText" > ${safeHTML}</div>
+      <footer> <div class="time">${formattedDate}</div>
         <button class="stars">&#11088;</button>
         <button class="retweet">&#128260;</button>
         <button class="heart">&#128156;</button>
       </footer>
-      </article>
-    `;
+      </article>`);
   }
+
+
+
+
+  renderTweets(data);
+
+  $(".tweet-form").submit (function (event) {
+    event.preventDefault();
+    var form = this;
+
+    $.ajax({
+      url: '/tweets/',
+      method: 'post',
+      data: $(form).serialize()
+    })
+  });
+
+  $(function() {
+  var $button = $('.tweet-form');
+  $button.on('click', function () {
+     $.ajax({
+      url: '/tweets/',
+      method: 'GET',
+      success: function (datas) {
+        renderTweets(datas)
+      }
+    });
+  });
+});
+
+
+
+});
 

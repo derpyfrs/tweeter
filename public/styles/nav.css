@@ -1,5 +1,8 @@
 nav {
-  position:
+  display: inline;
+  background-size: 100%;
+  width: 100%;
+  position: absolute;
   top: 0;
   height: 60px;
   background-color: #fACCCC;
@@ -11,18 +14,35 @@ nav {
 
 
 #nav-bar .logo {
-
+  display: inline-block;
   float: left;
   height: 60px;
   width: 60px;
 }
 
 #nav-bar .header{
+  display: inline-block;
   float: left;
   font-size: 200%;
   padding-left: 10px;
   padding-top: 8px;
   letter-spacing: .7em;
 
+
+}
+
+button.compose {
+  /*display: block;*/
+  height:40px;
+  width: 140px;
+  z-index: 99999;
+  display: block;
+  letter-spacing: .3em;
+  text-align: center;
+  /*margin-left: px*/
+  margin-top: 10px;
+  padding: 3px;
+  font-size: 88%;
+  float: right;
 
 }
