@@ -8,9 +8,6 @@
 $(function() {
 
 
-  function preventDef(event) {
-    event.preventDefault(event);
-  }
 
   function formatDate(timestamp) {
     return moment(timestamp).fromNow();
