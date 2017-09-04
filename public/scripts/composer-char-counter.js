@@ -1,34 +1,48 @@
 $(function() {
 
-  var maxChar = 140;
-  var $textarea = $('textarea');
-  var $counter = $('.counter');
+  let maxChar = 140;
+  let count;
 
-  $(':input[type="submit"]').prop('disabled', false);
+  $('.o--tweet').keyup(updateCount);
+  $('.btn--compose').prop('disabled', false);
+
+  $('.btn--compose').click(function() {
+    if (count === undefined) {
+      alert( "You can't submit an empty message :(." );
+    }
+  });
+
+  let maxLength = 140;
+
+  $('.o--tweet').keyup(function() {
+    var length = $(this).val().length;
+    length = maxLength-length;
+    $('.counter').text(length + ' characters');
+
+   if ( length < 0 ){
+      $('.counter').css('color', 'red');
+    }
+    else {
+      $('.counter').css('color', 'black');
+    }
+  });
+
+  $( ".compose" ).click(function() {
+    $( ".new-tweet" ).slideToggle( "slow", function() {
+      // Animation complete.
+    });
+  })
 
   function updateCount() {
-    var count =  maxChar - $(this).val().length;
+    console.log('updated');
+    count = maxChar - $(this).val().length;
+    console.log(count);
 
-    $counter.text(count);
-    if (count === 140) {
-      $(':input[type="submit"]').prop('disabled', true);
-    }
     if (count < 0) {
-      $(':input[type="submit"]').prop('disabled', true);
-      alert("140 Max characters :(");
+      $('.btn--compose').prop('disabled', true);
     } else {
-      $(':input[type="submit"]').prop('disabled', false);
+      $('.btn--compose').prop('disabled', false);
     }
   }
-
-$( ".compose" ).click(function() {
-  $( ".new-tweet" ).slideToggle( "slow", function() {
-    // Animation complete.
-  });
-})
-  $textarea.keydown(updateCount);
-  $textarea.keyup(updateCount);
-
-
 
 });
